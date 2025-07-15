@@ -57,6 +57,7 @@ const showWinner = (winner) => {
     msg.innerText = `Congratulations! ${winner} is the winner!`;
     msgContainer.classList.remove("hide");
     disableBoxes();
+    celebrateConfetti();
 }
 
 const showDraw =()=>{
@@ -87,3 +88,20 @@ const checkWinner = () => {
 
 newGameButton.addEventListener("click", resetGame)
 resetButton.addEventListener("click", resetGame)
+
+
+
+
+
+
+
+
+function celebrateConfetti() {
+    if (window.confetti) {
+        confetti({
+            particleCount: 120,
+            spread: 70,
+            origin: { y: 0.6 }
+        });
+    }
+}
